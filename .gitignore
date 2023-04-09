@@ -1,0 +1,16 @@
+.vs
+.vsconfig
+*.csproj
+*.meta
+*.cache
+
+Stepped landscape.sln
+
+Assets/Low Poly Trees
+Assets/Src/externalLib
+Library/
+Logs/
+ProjectSettings/
+UserSettings/
+Packages/
+Temp/
