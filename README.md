@@ -1,5 +1,16 @@
-# stepped-landscape
+# Stepped landscape generator
+A procedural generated landscape formed with irregular polygons. Farewell rectangular grids!
+![SS1](https://raw.githubusercontent.com/Liagson/stepped-landscape/main/Pictures/screenshot1.png)
 
+# Algorithm
+
+1. [A voronoi diagram](https://en.wikipedia.org/wiki/Voronoi_diagram) is generated though a random set of points. 
+2. The cells of the diagram are given a height set by a Perlin noise. If the `cliffs` option is set on the `MapGenerator` class then we switch from two perlin noise maps through the value of a third noise map.
+3. The diagram cells are turned into a mesh through triangulation. **It really helps that these cells are always convex**
+4. Walls are added from the voronoi cell sides. The walls go down to the bottom of the scene.
+5. Trees are added on the positions of the set of points of Step 1 (at random + not under water + not on the snowy parts)
+
+**Note:** This is actually my fourth attempt to make pretty landscapes with unity ([1st](https://github.com/Liagson/procedural-landscape-generator), [2nd](https://github.com/Liagson/godus-style-landscape-generator) and [3rd](https://github.com/Liagson/procedural-landscape-generator-v2) attempts) and might not be the last, so check my repos in a few years :)
 
 # Missing Asset
 
