@@ -1,12 +1,12 @@
 # Stepped landscape generator
-A procedural generated landscape formed with irregular polygons. This approach gives us pleasant shapes that avoid distorted rectangular grid squareness nature.
+A procedural generated stepped landscape based on irregular polygons tiling. This approach gives us pleasant shapes that avoid the ugly squareness nature of using a distorted rectangular grid solution.
 
 ![SS1](https://raw.githubusercontent.com/Liagson/stepped-landscape/main/Pictures/screenshot1.png)
 
 # Algorithm
 
 1. [A voronoi diagram](https://en.wikipedia.org/wiki/Voronoi_diagram) is generated though a random set of points. 
-2. The cells of the diagram are given a height set by a Perlin noise. If the `cliffs` bool is set on the `MapGenerator` class then we switch from two perlin noise maps through the value of a third noise map.
+2. The cells of the diagram are given a height set by [Perlin noise](https://en.wikipedia.org/wiki/Perlin_noise). If the `cliffs` bool is set on the `MapGenerator` class then we switch from two Perlin noise maps through the value of a third noise map.
 3. The diagram cells are turned into a mesh through triangulation. **It really helps that these cells are always convex**
 4. Walls are added from the voronoi cell sides. The walls go down to the bottom of the scene.
 5. Trees are added on the positions of the set of points of Step 1 (at random + not under water + not on the snowy parts). Trees are set through the `forests` bool on `MapGenerator`
